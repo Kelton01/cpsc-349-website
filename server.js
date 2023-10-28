@@ -75,10 +75,11 @@ app.post("/register", async (req, res) => {
     const newUser = new User({ username, password: hashedPassword });
     await newUser.save();
 
-    res.status(201).json({ message: "Registration successful." });
+    // res.status(201).json({ message: "Registration successful." });
+    res.status(201).sendFile(path.join(__dirname, '/public/index.html'))
   } catch (error) {
     console.error("Registration error:", error);
-    res.status(500).json({ message: "Registration failed." });
+    // res.status(500).json({ message: "Registration failed." });
   }
 });
 
@@ -98,10 +99,11 @@ app.post("/login", async (req, res) => {
       return res.status(401).json({ message: "Invalid username or password." });
     }
 
-    res.status(200).json({ message: "Login successful." });
+     // res.status(200).json({ message: "Login successful." });
+     res.status(200).sendFile(path.join(__dirname, '/public/app.html'));
   } catch (error) {
     console.error("Login error:", error);
-    res.status(500).json({ message: "Login failed." });
+    // res.status(500).json({ message: "Login failed." });
   }
 });
 

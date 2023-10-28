@@ -19,11 +19,11 @@ const userSchema = new mongoose.Schema({
   },
   phone: {
       type: String,
-      default: '123-456-7890'
+      default: 'Phone: 123-456-7890'
   },
   email: {
       type: String,
-      default: 'name@example.com'
+      default: 'Email: name@example.com'
   },
   website: {
       type: String,
